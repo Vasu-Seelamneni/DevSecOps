@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YAML — Study Sheet</title>
+<link rel="stylesheet" href="notebook-style.css">
+</head>
+<body>
+
+<div class="sheet">
+
+  <div class="page-head">
+    <span class="subject-badge">📄 YAML Basics</span>
+    <h1 class="page-title">YAML — YAML Ain't Markup Language</h1>
+    <p class="page-meta">My own notes, taken from the YAML Introduction diagram</p>
+  </div>
+
+  <!-- ============ WHAT IS YAML ============ -->
+  <div class="section">
+    <h2 class="sec-title orange">① What is YAML?</h2>
+    <div class="hand-box red">
+      <p>
+        YAML is a <span class="hl.y">human-friendly, indentation-based</span> way to organize data <b>hierarchically</b>.
+      </p>
+      <p>
+        It is a <b>human-readable data serialization standard</b> that can be used with all programming languages,
+        and is often used to write <b>configuration files</b>.
+      </p>
+    </div>
+    <div class="sticky">YAML is designed to be <b>easy to read and write</b> — a popular choice for configuration management.</div>
+  </div>
+
+  <!-- ============ KEY FEATURES ============ -->
+  <div class="section">
+    <h2 class="sec-title">② Key Features</h2>
+    <ul class="notes">
+      <li><b>Human-Readable & Hierarchical</b> — clean, structured, easy to scan</li>
+      <li><b>Flexible Datatypes</b> — scalars (strings, integers, floats, booleans), lists, dictionaries (mappings)</li>
+      <li><b>Cross-Platform</b> — works across different programming languages</li>
+      <li><b>Strict Indentation</b> — XML/JSON don't need indentation, but YAML follows it strictly → more readable</li>
+    </ul>
+  </div>
+
+  <!-- ============ JSON vs YAML ============ -->
+  <div class="section">
+    <h2 class="sec-title green">③ JSON ↔ YAML</h2>
+    <div class="hand-box green">
+      <ul class="notes">
+        <li>Every <b>JSON</b> file can be converted into <b>YAML</b> ✅</li>
+        <li>But <b>NOT vice versa</b> — features of YAML may be <b>lost</b> when converting YAML → JSON ⚠️</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============ COMMON USES ============ -->
+  <div class="section">
+    <h2 class="sec-title purple">④ Common Uses</h2>
+    <div class="cols">
+      <div class="col">
+        <h4>⚙️ Configuration Management</h4>
+        <ul class="notes">
+          <li><b>Ansible</b></li>
+          <li><b>Kubernetes</b></li>
+          <li><b>Docker Compose</b></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>📦 Other Uses</h4>
+        <ul class="notes">
+          <li><b>Data Storage</b> — small amounts of data for ease of access & readability</li>
+          <li><b>Data Serialization</b> — serialize data for communication between systems</li>
+          <li><b>Automation scripts</b> — write automation scripts</li>
+          <li><b>Data exchange</b> — between languages with different data structures</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ DATATYPES ============ -->
+  <div class="section">
+    <h2 class="sec-title red">⑤ YAML Datatypes</h2>
+    <div class="hand-box">
+      <b>Scalars:</b>
+      <span class="pills">
+        <span class="pill">Strings</span><span class="pill">Integers</span><span class="pill">Floats</span><span class="pill">Booleans</span>
+      </span>
+      <br><br>
+      <b>Collections:</b>
+      <span class="pills">
+        <span class="pill">Lists</span><span class="pill">Dictionaries (Mappings)</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- ============ SETUP ============ -->
+  <div class="section">
+    <h2 class="sec-title">⑥ Setup for Visualizing YAML 🛠️</h2>
+    <div class="code-note"><span class="cm"># Install VS Code → Python → YAML extension</span>
+pip3 install PyYAML
+pip3 install ruamel.yaml</div>
+    <p>
+      Use these to <b>observe YAML interpretation visually</b> in Python.
+    </p>
+  </div>
+
+  <!-- ============ QUICK RECAP ============ -->
+  <div class="section">
+    <h2 class="sec-title orange">⑦ Quick Recap ✍️</h2>
+    <ul class="check">
+      <li>YAML = human-friendly, indentation-based data format</li>
+      <li>Used for config files (Ansible, K8s, Docker Compose)</li>
+      <li>JSON → YAML always works; YAML → JSON may lose features</li>
+      <li>Strict indentation = more readable</li>
+      <li>Cross-platform & language-agnostic</li>
+    </ul>
+  </div>
+
+  <div class="page-foot">
+    <span>📝 DevSecOps Study Notes — Vasu</span>
+    <span><a class="back-link" href="index.html">← Back to index</a></span>
+  </div>
+
+</div>
+
+</body>
+</html>

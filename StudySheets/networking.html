@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Networking — Study Sheet</title>
+<link rel="stylesheet" href="notebook-style.css">
+</head>
+<body>
+
+<div class="sheet">
+
+  <div class="page-head">
+    <span class="subject-badge">🌐 Networking Basics</span>
+    <h1 class="page-title">Networking Refresher</h1>
+    <p class="page-meta">My own notes, taken from the Networking diagram</p>
+  </div>
+
+  <!-- ============ OSI / TCP-IP ============ -->
+  <div class="section">
+    <h2 class="sec-title orange">① OSI & TCP/IP Models</h2>
+    <div class="hand-box">
+      <b>OSI Model (7 layers)</b>
+      <ul class="notes">
+        <li><b>L7</b> — HTTP · Application layer</li>
+        <li><b>L6</b> — encryption · Presentation layer</li>
+        <li><b>L5</b> — Session · Session layer</li>
+        <li><b>L4</b> — TCP/UDP · Transport layer</li>
+        <li><b>L3</b> — Router (packets) · Network layer</li>
+        <li><b>L2</b> — Switches (frames) · Data link layer</li>
+        <li><b>L1</b> — Cables · Physical layer</li>
+      </ul>
+    </div>
+    <div class="sticky blue">TCP-IP Model: <b>L7, L6, L5 → combined</b> into one Application layer. L4, L3, L2, L1 stay separate.</div>
+    <div class="flow">
+      <span class="step">DNS Resolution — Stage 1</span>
+      <span class="arrow">➜</span>
+      <span class="step">TCP Handshake — Stage 2</span>
+      <span class="arrow">➜</span>
+      <span class="step">Data Transfer</span>
+    </div>
+  </div>
+
+  <!-- ============ IP & CIDR ============ -->
+  <div class="section">
+    <h2 class="sec-title">② IP Addressing</h2>
+    <ul class="notes">
+      <li><b>IP Address</b> — unique identifier for a device on a network</li>
+      <li><b>CIDR</b> — Classless Inter-Domain Routing (e.g. 10.0.0.0/16)</li>
+      <li><b>Subnet</b> — logical subdivision of an IP network</li>
+    </ul>
+    <div class="cols">
+      <div class="col">
+        <h4>🔒 Private IP</h4>
+        <ul class="notes">
+          <li>Always starts with <b>192 / 172 / 10.0.0.0</b></li>
+          <li>Used inside VPC/VNet</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>🌍 Public IP</h4>
+        <ul class="notes">
+          <li>Reachable from the internet</li>
+          <li>Used for external access</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PORTS ============ -->
+  <div class="section">
+    <h2 class="sec-title green">③ Ports 💡</h2>
+    <div class="hand-box green">
+      <b>Ports</b> = communication endpoints on a device for each <b>resource/service</b>.
+      e.g. 22 → SSH, 80 → HTTP, 443 → HTTPS, 3306 → MySQL.
+    </div>
+  </div>
+
+  <!-- ============ CLOUD HIERARCHY ============ -->
+  <div class="section">
+    <h2 class="sec-title purple">④ Cloud Hierarchy — Azure vs AWS</h2>
+    <div class="hand-box blue">
+      <ul class="notes">
+        <li><b>Resource Groups</b> — nothing but a <b>logical name or boundary for grouping a set of resources</b></li>
+        <li>There are <b>NO Resource Groups in AWS</b> — instead it uses <b>Regions</b> to locate resources</li>
+      </ul>
+    </div>
+
+    <div class="cols">
+      <div class="col col-azure">
+        <h4>Azure Hierarchy</h4>
+        <ol class="notes">
+          <li>Root Management Group</li>
+          <li>→ Sub Management Groups</li>
+          <li>→ Subscriptions (billing boundaries)</li>
+          <li>→ Resources (cost mgmt)</li>
+        </ol>
+      </div>
+      <div class="col col-aws">
+        <h4>AWS / IAM</h4>
+        <ul class="notes">
+          <li>Uses <b>IAM account</b> instead of RG's → Regions</li>
+          <li>Root account should NOT be used</li>
+          <li><b>MFA</b> recommended</li>
+          <li>Account alias → e.g. citi / vedin / any_org</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky">Azure identity = <b>Entra ID</b> (users u1,u2,u3… · groups G1,G2,G3… · policies)</div>
+  </div>
+
+  <!-- ============ IAM ----------------- -->
+  <div class="section">
+    <h2 class="sec-title red">⑤ IAM & Entra ID</h2>
+    <div class="cols">
+      <div class="col">
+        <h4>AWS — IAM</h4>
+        <ul class="notes">
+          <li>Users (u1, u2, u3…)</li>
+          <li>Groups (G1, G2, G3…)</li>
+          <li>Policies (e.g. Storage Team)</li>
+          <li>Account Alias → citi / vedin / org</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>Azure — Entra ID</h4>
+        <ul class="notes">
+          <li>Users (u1, u2, u3…)</li>
+          <li>Groups (G1, G2, G3…)</li>
+          <li>Policies</li>
+          <li>Tenants — can join e.g. Citibank ↔ Citibank Loans</li>
+        </ul>
+      </div>
+    </div>
+    <p>
+      AWS services: <span class="pills"><span class="pill">EC2</span><span class="pill">S3</span><span class="pill">ECR</span><span class="pill">EKS</span></span>
+    </p>
+  </div>
+
+  <!-- ============ DNS IN DEPTH ============ -->
+  <div class="section">
+    <h2 class="sec-title">⑥ DNS Resolution — Stage 1 🌐</h2>
+    <div class="hand-box">
+      <b>Why:</b> The user types a domain (e.g. citi.com) → DNS resolves it to an IP address.
+      <div class="flow">
+        <span class="step">User types URL</span>
+        <span class="arrow">➜</span>
+        <span class="step">DNS lookup</span>
+        <span class="arrow">➜</span>
+        <span class="step">Get IP</span>
+        <span class="arrow">➜</span>
+        <span class="step">Then TCP Handshake (Stage 2)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ QUESTIONS ============ -->
+  <div class="section">
+    <h2 class="sec-title orange">⑦ Questions to Research 🔍</h2>
+    <ul class="notes">
+      <li>How is the security provided in Azure between company-to-company tenants?</li>
+      <li>Is it possible to create an independent resource without a Resource Group?</li>
+      <li>Does AWS maintain a similar hierarchy as Azure (RMG → Sub MG → Subscriptions)?</li>
+      <li>Is it mandatory to delete all new user accounts other than the root account in AWS?</li>
+      <li>How is the CIDR range provided for company-to-company in cloud datacenters?</li>
+      <li>Based on CIDR range, do they charge for the number of IPs?</li>
+      <li>How many VPCs or VNets can be created in AWS/Azure per company?</li>
+      <li>Why is "power of 2" always considered for CIDR range calculations?</li>
+    </ul>
+  </div>
+
+  <div class="page-foot">
+    <span>📝 DevSecOps Study Notes — Vasu</span>
+    <span><a class="back-link" href="index.html">← Back to index</a></span>
+  </div>
+
+</div>
+
+</body>
+</html>

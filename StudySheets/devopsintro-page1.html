@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevOps Intro — Study Sheet Page 1</title>
+<link rel="stylesheet" href="notebook-style.css">
+</head>
+<body>
+
+<div class="sheet">
+
+  <div class="page-head">
+    <span class="subject-badge">☁️ DevOps Introduction</span>
+    <h1 class="page-title">DevOps — The Big Picture</h1>
+    <p class="page-meta">My own notes, taken from the DevOpsIntro diagram · Page 1 of 2</p>
+  </div>
+
+  <!-- ============ WHAT IS A COMPUTER ============ -->
+  <div class="section">
+    <h2 class="sec-title orange">① Computer Fundamentals</h2>
+    <div class="hand-box red">
+      <ul class="notes">
+        <li><span class="hl.y">Computer</span> = Take the <b>input</b> → <b>process</b> the data → <b>store</b> the data → <b>output</b></li>
+        <li>Core hardware, literally: <span class="hl.c">CPU, RAM, HDD/Storage, NIC, GPU</span></li>
+      </ul>
+    </div>
+
+    <div class="cols">
+      <div class="col">
+        <h4>💻 Your Laptop/PC</h4>
+        <ul class="notes">
+          <li>2 CPU</li>
+          <li>64 GB</li>
+          <li>1 TB</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>🏢 Enterprise Server (Dell PowerEdge)</h4>
+        <ul class="notes">
+          <li>CPU → <b>Xeon / AMD</b></li>
+          <li>RAM → <b>64 / 128 GB</b></li>
+          <li>NIC → <b>4 × 16 Gbps</b></li>
+          <li>Storage → <b>1 PB</b></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky">Enterprise servers must be <b>Reliable, High-Performance, Secure, 24/7, Redundant</b> 🔁</div>
+  </div>
+
+  <!-- ============ WHAT IS CLOUD ============ -->
+  <div class="section">
+    <h2 class="sec-title">② What is the Cloud?</h2>
+    <p>
+      <span class="hl.y">The idea:</span> Application / product software companies can <b>rent servers</b> from cloud providers and
+      deploy applications over there — with high performance, high bandwidth, low latency on reliable & redundant infrastructure.
+    </p>
+    <div class="hand-box blue">
+      <b>XAAS — Everything as a Service:</b>
+      <ul class="notes">
+        <li>IAAS — Infrastructure as a Service (rent the <b>physical</b> server)</li>
+        <li>PAAS — Platform as a Service</li>
+        <li>SAAS — Software as a Service (Salesforce, Gmail, O365…)</li>
+        <li>Backup as a Service</li>
+        <li>Database as a Service</li>
+        <li>Storage as a Service</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============ DATACENTER HIERARCHY ============ -->
+  <div class="section">
+    <h2 class="sec-title green">③ Datacenter Hierarchy 🏢</h2>
+    <div class="flow">
+      <span class="step">Virtual Servers (VM1, VM2, VM3…)</span>
+      <span class="arrow">↑</span>
+      <span class="step">Physical Servers</span>
+      <span class="arrow">↑</span>
+      <span class="step">Racks (Server rack)</span>
+      <span class="arrow">↑</span>
+      <span class="step">Datacenter = Availability Zone</span>
+      <span class="arrow">↑</span>
+      <span class="step">Region</span>
+      <span class="arrow">↑</span>
+      <span class="step">AWS + Azure (Global Infra)</span>
+    </div>
+    <div class="sticky blue">
+      <b>Availability Zone</b> = nothing but a <b>physical datacenter</b>. A region has multiple AZs (AZ-1, AZ-2, AZ-3).
+    </div>
+    <p>
+      A datacenter contains: <span class="pills"><span class="pill">Servers</span><span class="pill">Storage devices</span><span class="pill">NW devices (switch)</span><span class="pill">Cooling system</span><span class="pill">Power system</span><span class="pill">Security</span></span>
+    </p>
+    <p>
+      Edge locations = <b>CDN / Point of Presence (POP)</b> near the customer's location — e.g. serving Blinkit users in West US from the nearest edge.
+    </p>
+  </div>
+
+  <!-- ============ SW STACK ============ -->
+  <div class="section">
+    <h2 class="sec-title purple">④ Software Stack on a Server</h2>
+    <div class="hand-box">
+      <div class="flow">
+        <span class="step">HW (CPU, RAM, NIC, Storage)</span>
+        <span class="arrow">→</span>
+        <span class="step">OS — Linux > 80–90%, Windows < 10%</span>
+        <span class="arrow">→</span>
+        <span class="step">SW Apps (.net, java, nginx, apache)</span>
+        <span class="arrow">→</span>
+        <span class="step">DB</span>
+      </div>
+      <p>
+        <b>Linux distros:</b>
+        <span class="pills"><span class="pill red">Redhat</span><span class="pill orange">Fedora</span><span class="pill">Ubuntu</span><span class="pill purple">Suse</span><span class="pill red">Kali</span></span>
+      </p>
+    </div>
+    <p>
+      Core system knowledge needed: <span class="hl.c">K8s, Docker, Java, Active Directory, DNS, DHCP, Linux/Shell, Python, Terraform</span>
+    </p>
+  </div>
+
+  <!-- ============ DEVOPS GOAL ============ -->
+  <div class="section">
+    <h2 class="sec-title red">⑤ DevOps Goal 🎯</h2>
+    <div class="quote">"DevOps Goal: Deliver the software <b>at speed</b> for the end users to use it."</div>
+    <div class="flow">
+      <span class="step">Code</span><span class="arrow">➜</span>
+      <span class="step">Git</span><span class="arrow">➜</span>
+      <span class="step">Build (.jar/.war/.dll/.exe)</span><span class="arrow">➜</span>
+      <span class="step">Test</span><span class="arrow">➜</span>
+      <span class="step">Package (Docker)</span><span class="arrow">➜</span>
+      <span class="step">Deploy (K8s / Cloud)</span><span class="arrow">➜</span>
+      <span class="step">Monitor (Grafana)</span>
+    </div>
+    <p>
+      DevOps = <span class="hl.g">Development + Operations + Automation + Collaboration</span> — build faster, deploy safely, keep it running.
+    </p>
+  </div>
+
+  <div class="page-foot">
+    <span>📝 DevSecOps Study Notes — Vasu</span>
+    <span>Page 1 · <a class="back-link" href="index.html">← Back to index</a></span>
+  </div>
+
+</div>
+
+</body>
+</html>

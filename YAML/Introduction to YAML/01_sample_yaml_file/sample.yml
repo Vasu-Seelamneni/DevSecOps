@@ -1,0 +1,14 @@
+person:
+  name: John Doe
+  age: 30
+  city: New York
+  is_employee: true
+  skills:
+    - Python
+    - JavaScript
+    - SQL 
+  address:
+    street: 123 Main St
+    city: New York
+    state: NY
+    zipCode: 10001

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevOps Intro — Study Sheet Page 2</title>
+<link rel="stylesheet" href="notebook-style.css">
+</head>
+<body>
+
+<div class="sheet">
+
+  <div class="page-head">
+    <span class="subject-badge">☁️ DevOps Introduction</span>
+    <h1 class="page-title">Cloud Accounts & Tooling</h1>
+    <p class="page-meta">My own notes, taken from the DevOpsIntro diagram · Page 2 of 2</p>
+  </div>
+
+  <!-- ============ ACCOUNT CREATION ============ -->
+  <div class="section">
+    <h2 class="sec-title">① Cloud Account Setup ☁️</h2>
+
+    <div class="cols">
+      <div class="col col-aws">
+        <h4>AWS Account</h4>
+        <ol class="notes">
+          <li>Open incognito → google.com → AWS account creation → <b>Try AWS for Free</b></li>
+          <li>Sign-up → use <b>vasu9devops@gmail.com</b></li>
+          <li>5-step process to complete account creation</li>
+          <li>Root account → username: <b>vasuaws</b></li>
+        </ol>
+      </div>
+      <div class="col col-azure">
+        <h4>Azure Account</h4>
+        <ol class="notes">
+          <li>Open incognito → google.com → Azure account creation → <b>Try Azure for Free</b></li>
+          <li>Sign-up → create a Microsoft account using Gmail ID</li>
+          <li>Sign-up for Azure account → provide personal details + <b>CC/Debit card details</b></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="sticky">💡 Create ONE gmail account for both Azure & AWS: <b>vasu9devops@gmail.com</b></div>
+  </div>
+
+  <!-- ============ AWS / AZURE DIFFERENCES ============ -->
+  <div class="section">
+    <h2 class="sec-title purple">② AWS vs Azure — Key Ideas</h2>
+    <div class="hand-box blue">
+      <ul class="notes">
+        <li>Azure groups resources using <b>Resource Groups</b> (logical name/boundary for grouping a set of resources)</li>
+        <li>AWS uses <b>Regions</b> instead of Resource Groups to locate resources</li>
+        <li>Azure hierarchy: <b>Root Management Group → Sub Management Groups → Subscriptions</b></li>
+        <li>Subscription = <b>billing boundary</b> (cost management + resources)</li>
+        <li>AWS identity = <b>IAM</b> (users, groups, policies) · Azure identity = <b>Entra ID</b> (users, groups, policies)</li>
+        <li>You can join Azure tenants, e.g. Citibank ↔ Citibank Loans</li>
+      </ul>
+    </div>
+    <div class="sticky blue">In AWS, instead of RG's it uses <b>Regions</b>.</div>
+  </div>
+
+  <!-- ============ REGIONS / DATA CENTERS ============ -->
+  <div class="section">
+    <h2 class="sec-title orange">③ Regions & Real-World Examples 🌍</h2>
+    <p>
+      Regions seen in the diagram:
+      <span class="pills">
+        <span class="pill">Hyderabad</span><span class="pill">Ghatkesar</span><span class="pill">Shadnagar</span>
+        <span class="pill">Kompally</span><span class="pill">Pune Region</span><span class="pill">Chennai</span>
+        <span class="pill">US East</span><span class="pill">US West</span><span class="pill">Oregon</span><span class="pill">Canada</span>
+      </span>
+    </p>
+    <div class="hand-box green">
+      <b>Example apps & infra:</b>
+      <ul class="notes">
+        <li>Payments (2.5 sec) → HDFC — needs a <b>healthy</b> system with <b>scale</b></li>
+        <li>Companies: <b>Blinkit, Zepto, PhonePe, Walmart, Netflix, Macy's, H&M, Citi, ICICI</b></li>
+        <li>Apps: HRMS, Payroll, Banking, CRM, SQL</li>
+        <li>Apps stack: .net, java, python, node, PostgreSQL, dotnetRE</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============ CICD ============ -->
+  <div class="section">
+    <h2 class="sec-title green">④ CI/CD Pipelines 🚀</h2>
+    <div class="cols">
+      <div class="col">
+        <h4>Azure DevOps</h4>
+        <ul class="notes">
+          <li>Azure DevOps (Python App)</li>
+          <li>Azure DevOps (Java App)</li>
+          <li>Azure DevOps (.NET App)</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>GitHub Actions → AWS</h4>
+        <ul class="notes">
+          <li>GitHub Actions → AWS (Python App)</li>
+          <li>GitHub Actions → AWS (Java App)</li>
+          <li>GitHub Actions → AWS (.NET App)</li>
+        </ul>
+      </div>
+    </div>
+    <p>
+      CI/CD tools:
+      <span class="pills">
+        <span class="pill">Git</span><span class="pill">GitHub</span><span class="pill">Azure Repos</span>
+        <span class="pill red">Jenkins</span><span class="pill orange">GitHub Actions</span><span class="pill">Azure Pipelines</span>
+        <span class="pill purple">Argo CD</span>
+      </span>
+    </p>
+    <p>
+      Azure DevOps also has: <span class="hl.c">Artifacts, Test Plans, Work Items (Jira)</span>
+    </p>
+  </div>
+
+  <!-- ============ CONTAINERS / K8S ============ -->
+  <div class="section">
+    <h2 class="sec-title">⑤ Containers & Orchestration 🐳</h2>
+    <div class="flow">
+      <span class="step">Docker (build images)</span>
+      <span class="arrow">➜</span>
+      <span class="step">Container Registry (ECR)</span>
+      <span class="arrow">➜</span>
+      <span class="step">K8s — AKS / EKS (run & scale)</span>
+      <span class="arrow">➜</span>
+      <span class="step">Service Mesh — Istio</span>
+      <span class="arrow">➜</span>
+      <span class="step">Helm (packaging)</span>
+    </div>
+    <p>Containers make apps <b>portable & consistent</b>. Kubernetes manages & scales them in production.</p>
+  </div>
+
+  <!-- ============ SECURITY ============ -->
+  <div class="section">
+    <h2 class="sec-title red">⑥ Security in DevOps 🔐</h2>
+    <ul class="notes">
+      <li><b>SonarQube</b> — code quality & static analysis</li>
+      <li><b>Trivy, Veracode</b> — vulnerability scanning</li>
+      <li><b>Key Vaults</b> — secrets management</li>
+      <li><b>K8s secrets, ConfigMaps</b> — cluster config & secrets</li>
+      <li><b>NSG, ASG, Application Gateways</b> — networking & security</li>
+      <li><b>APIM</b> — API management</li>
+      <li><b>Ingress</b> — inbound traffic to K8s</li>
+    </ul>
+    <div class="sticky">Security early = <b>DevSecOps</b> mindset 🛡️</div>
+  </div>
+
+  <!-- ============ MONITORING + IAC ============ -->
+  <div class="section">
+    <h2 class="sec-title purple">⑦ Observability & Infrastructure as Code</h2>
+    <div class="cols">
+      <div class="col">
+        <h4>Monitoring / Observability</h4>
+        <span class="pills">
+          <span class="pill">Prometheus</span><span class="pill">Grafana</span><span class="pill">ELK</span>
+          <span class="pill">Dynatrace</span><span class="pill">Splunk</span><span class="pill">DataDog</span>
+        </span>
+      </div>
+      <div class="col">
+        <h4>IaC</h4>
+        <ul class="notes">
+          <li><b>Terraform (IaC)</b> — AWS + Azure hybrid</li>
+          <li>Repeatable, consistent, scalable infra</li>
+        </ul>
+      </div>
+    </div>
+    <p><b>AIOps</b> = AI-powered security + ops. Data analysis: <b>Historical + Real-time</b> → ① Historical analysis ② Performance ③ Correlation ④ Task automation</p>
+  </div>
+
+  <!-- ============ ROADMAP ============ -->
+  <div class="section">
+    <h2 class="sec-title green">⑧ My Roadmap ✅</h2>
+    <ul class="check">
+      <li>Tech stack: Linux/Shell/Python · Git/GitHub/Azure Repos · Docker · K8s · Terraform · Java/.NET</li>
+      <li>Build 3-tier application on <b>AWS + Azure</b></li>
+      <li>Mini capstone project + <b>Complete capstone project</b></li>
+      <li>Interview prep</li>
+    </ul>
+  </div>
+
+  <div class="page-foot">
+    <span>📝 DevSecOps Study Notes — Vasu</span>
+    <span>Page 2 · <a class="back-link" href="index.html">← Back to index</a></span>
+  </div>
+
+</div>
+
+</body>
+</html>

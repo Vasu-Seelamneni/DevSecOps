@@ -1,0 +1,464 @@
+/* ============================================================
+   Notebook Study Sheet Styles
+   Handwritten / notebook-paper look using Google Fonts
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Gochi+Hand&family=Patrick+Hand&display=swap');
+
+:root {
+  --ink: #2b2b46;
+  --ink-soft: #4a4a6a;
+  --blue: #1a5c8a;
+  --red: #c0392b;
+  --green: #1e8449;
+  --purple: #6c3483;
+  --orange: #d35400;
+  --hl-yellow: rgba(255, 230, 80, 0.6);
+  --hl-pink: rgba(255, 150, 200, 0.45);
+  --hl-cyan: rgba(120, 210, 255, 0.45);
+  --hl-green: rgba(140, 230, 170, 0.55);
+  --rule-color: rgba(120, 165, 225, 0.28);
+  --margin-color: rgba(255, 130, 130, 0.45);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 40px 10px;
+  background:
+    radial-gradient(ellipse at 20% 10%, rgba(255, 255, 255, 0.06), transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(255, 255, 255, 0.05), transparent 50%),
+    #565662;
+  font-family: 'Patrick Hand', 'Segoe Print', 'Comic Sans MS', cursive;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+/* ---------- The notebook page ---------- */
+.sheet {
+  position: relative;
+  width: 860px;
+  min-height: 1150px;
+  margin: 0 auto 50px auto;
+  padding: 70px 90px 90px 108px;
+  background:
+    /* red margin line */
+    linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 72px,
+      var(--margin-color) 72px,
+      var(--margin-color) 74px,
+      transparent 74px
+    ),
+    /* ruled lines */
+    repeating-linear-gradient(
+      transparent,
+      transparent 35px,
+      var(--rule-color) 35px,
+      var(--rule-color) 36px
+    ),
+    /* paper colour */
+    #fffdf6;
+  border-radius: 6px;
+  box-shadow:
+    0 12px 45px rgba(0, 0, 0, 0.45),
+    inset 0 0 60px rgba(140, 120, 60, 0.06);
+}
+
+/* punched holes along the left edge */
+.sheet::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  background:
+    radial-gradient(circle at 50% 130px, #4a4a52 3px, #3a3a42 5px, #fff 6px, #dcdcdc 9px, transparent 10px),
+    radial-gradient(circle at 50% 50%, #4a4a52 3px, #3a3a42 5px, #fff 6px, #dcdcdc 9px, transparent 10px),
+    radial-gradient(circle at 50% calc(100% - 130px), #4a4a52 3px, #3a3a42 5px, #fff 6px, #dcdcdc 9px, transparent 10px);
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+/* tape strip on the top of the page */
+.sheet::after {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1.5deg);
+  width: 190px;
+  height: 34px;
+  background: rgba(255, 246, 200, 0.55);
+  border-left: 1px dashed rgba(150, 130, 60, 0.3);
+  border-right: 1px dashed rgba(150, 130, 60, 0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Page header ---------- */
+.page-head { margin-bottom: 30px; }
+
+.subject-badge {
+  display: inline-block;
+  background: #ffe9a8;
+  border: 2px dashed #d4a017;
+  border-radius: 14px;
+  padding: 3px 16px;
+  font-family: 'Gochi Hand', cursive;
+  font-size: 17px;
+  color: #7a5b00;
+  transform: rotate(-1.2deg);
+  margin-bottom: 10px;
+}
+
+.page-title {
+  font-family: 'Caveat', cursive;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 4px 0 2px 0;
+  color: var(--ink);
+  line-height: 1.1;
+  transform: rotate(-0.6deg);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.06);
+}
+
+.page-meta {
+  font-family: 'Gochi Hand', cursive;
+  font-size: 16px;
+  color: #777;
+  margin: 0;
+}
+
+/* ---------- Sections ---------- */
+.section { margin: 36px 0 30px 0; }
+
+.sec-title {
+  font-family: 'Caveat', cursive;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--blue);
+  margin: 0 0 10px 0;
+  text-decoration: underline wavy rgba(26, 92, 138, 0.6) 2px;
+  text-underline-offset: 9px;
+  transform: rotate(-0.3deg);
+}
+
+.sec-title.red { color: var(--red); text-decoration-color: rgba(192, 57, 43, 0.55); }
+.sec-title.green { color: var(--green); text-decoration-color: rgba(30, 132, 73, 0.5); }
+.sec-title.purple { color: var(--purple); text-decoration-color: rgba(108, 52, 131, 0.45); }
+.sec-title.orange { color: var(--orange); text-decoration-color: rgba(211, 84, 0, 0.5); }
+
+/* ---------- Handwritten highlight ---------- */
+.hl {
+  padding: 0 6px;
+  border-radius: 4px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.hl.y { background: linear-gradient(100deg, transparent 2px, var(--hl-yellow) 2px); }
+.hl.p { background: linear-gradient(100deg, transparent 2px, var(--hl-pink) 2px); }
+.hl.c { background: linear-gradient(100deg, transparent 2px, var(--hl-cyan) 2px); }
+.hl.g { background: linear-gradient(100deg, transparent 2px, var(--hl-green) 2px); }
+
+/* ---------- Hand-drawn box (wobble borders) ---------- */
+.hand-box {
+  border: 2.5px solid var(--ink);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  padding: 14px 20px;
+  margin: 16px 0;
+  background: rgba(255, 255, 255, 0.55);
+}
+.hand-box.blue { border-color: var(--blue); }
+.hand-box.red { border-color: var(--red); }
+.hand-box.green { border-color: var(--green); }
+
+/* ---------- Sticky note ---------- */
+.sticky {
+  background: linear-gradient(175deg, #fff6bb 0%, #fff3a8 60%, #f7e98e 100%);
+  border: 1px solid #e5d585;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  padding: 12px 18px;
+  margin: 18px 0 18px 10px;
+  transform: rotate(1.3deg);
+  font-family: 'Gochi Hand', cursive;
+  font-size: 17px;
+  color: #5d4a00;
+  position: relative;
+  display: inline-block;
+  max-width: 92%;
+}
+.sticky::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 30px;
+  width: 70px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.45);
+  border-left: 1px dashed rgba(160, 140, 60, 0.4);
+  border-right: 1px dashed rgba(160, 140, 60, 0.4);
+  transform: rotate(-2deg);
+}
+.sticky.blue { background: linear-gradient(175deg, #dff2ff, #c5e7fb); color: #16425b; border-color: #a9d4ec; }
+.sticky.pink { background: linear-gradient(175deg, #ffe3f1, #ffcde6); color: #6d2449; border-color: #e7b0cf; }
+
+/* ---------- Notes / bullet list ---------- */
+ul.notes, ol.notes { list-style: none; padding-left: 4px; margin: 8px 0; }
+
+ul.notes li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 7px;
+  font-size: 19px;
+}
+/* pencil marker for bullet notes */
+ul.notes li::before {
+  content: "✎";
+  position: absolute;
+  left: 4px;
+  top: 2px;
+  font-size: 14px;
+  color: var(--orange);
+}
+
+ol.notes { counter-reset: n; }
+ol.notes li {
+  position: relative;
+  padding-left: 36px;
+  margin-bottom: 7px;
+  counter-increment: n;
+}
+ol.notes li::before {
+  content: counter(n) ".";
+  position: absolute;
+  left: 0;
+  color: var(--blue);
+  font-weight: 700;
+  font-family: 'Gochi Hand', cursive;
+}
+
+/* ---------- Checklist ---------- */
+ul.check { list-style: none; padding-left: 4px; margin: 10px 0; }
+ul.check li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 7px;
+  font-size: 19px;
+}
+ul.check li::before {
+  content: "☐";
+  position: absolute;
+  left: 2px;
+  color: var(--purple);
+  font-size: 20px;
+}
+ul.check li.done::before {
+  content: "☑";
+  color: var(--green);
+}
+
+/* ---------- Flow diagram ---------- */
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 14px 0;
+}
+.flow .step {
+  border: 2px dashed var(--blue);
+  border-radius: 10px;
+  padding: 6px 14px;
+  font-family: 'Gochi Hand', cursive;
+  font-size: 17px;
+  background: rgba(120, 210, 255, 0.12);
+  transform: rotate(-0.5deg);
+}
+.flow .arrow {
+  font-size: 24px;
+  color: var(--red);
+  transform: rotate(0deg);
+}
+
+/* ---------- Two column ---------- */
+.cols { display: flex; gap: 24px; margin: 14px 0; }
+.cols .col { flex: 1; min-width: 0; }
+.cols .col h4 {
+  font-family: 'Caveat', cursive;
+  font-size: 23px;
+  margin: 0 0 6px 0;
+}
+.col-aws h4 { color: #cc7b00; }
+.col-azure h4 { color: #0072c6; }
+
+/* ---------- Pill tags ---------- */
+.pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.pill {
+  background: #fff;
+  border: 1.8px solid var(--blue);
+  border-radius: 20px;
+  padding: 3px 13px;
+  font-size: 16px;
+  font-family: 'Gochi Hand', cursive;
+  color: var(--blue);
+  transform: rotate(-0.6deg);
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.08);
+}
+.pill.red { border-color: var(--red); color: var(--red); }
+.pill.green { border-color: var(--green); color: var(--green); }
+.pill.purple { border-color: var(--purple); color: var(--purple); }
+.pill.orange { border-color: var(--orange); color: var(--orange); }
+
+/* ---------- Code block (handwritten style) ---------- */
+.code-note {
+  font-family: 'Patrick Hand', cursive;
+  background: rgba(40, 45, 70, 0.94);
+  color: #ffe9a8;
+  border-radius: 12px;
+  padding: 14px 20px;
+  margin: 14px 0;
+  font-size: 17px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  border-left: 6px solid #ffc94d;
+  overflow-x: auto;
+}
+.code-note .cm { color: #8fb9a8; }
+
+/* ---------- Margin annotation ---------- */
+.margin-note {
+  position: absolute;
+  font-family: 'Gochi Hand', cursive;
+  color: var(--red);
+  font-size: 15px;
+  line-height: 1.3;
+  transform: rotate(-4deg);
+  max-width: 170px;
+  pointer-events: none;
+}
+.margin-note .circle {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--red);
+  border-radius: 50%;
+  margin-right: 4px;
+  vertical-align: -2px;
+}
+
+/* ---------- Divider ---------- */
+.divider {
+  border: none;
+  border-top: 3px dotted rgba(43, 43, 70, 0.35);
+  margin: 30px 0;
+  position: relative;
+}
+.divider::after {
+  content: "✁";
+  position: absolute;
+  right: 8px;
+  top: -14px;
+  background: #fffdf6;
+  padding: 0 8px;
+  color: rgba(43, 43, 70, 0.4);
+  font-size: 16px;
+  transform: rotate(8deg);
+}
+
+/* ---------- Underline for blank answers ---------- */
+.blank {
+  display: inline-block;
+  min-width: 90px;
+  border-bottom: 2px dotted var(--ink-soft);
+  color: var(--ink-soft);
+}
+
+/* ---------- Footer ---------- */
+.page-foot {
+  margin-top: 40px;
+  padding-top: 12px;
+  border-top: 2px solid rgba(43, 43, 70, 0.2);
+  font-family: 'Gochi Hand', cursive;
+  font-size: 14px;
+  color: #888;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ---------- Quote ---------- */
+.quote {
+  font-family: 'Caveat', cursive;
+  font-size: 22px;
+  color: var(--ink);
+  background: rgba(140, 230, 170, 0.25);
+  border-left: 6px solid var(--green);
+  padding: 10px 18px;
+  margin: 16px 0;
+  transform: rotate(-0.4deg);
+}
+
+/* ---------- Index / TOC page ---------- */
+.index-wrap { display: flex; flex-wrap: wrap; gap: 26px; justify-content: center; padding: 40px 10px; }
+.index-card {
+  width: 300px;
+  background: #fffdf6;
+  border-radius: 14px;
+  padding: 26px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  text-decoration: none;
+  color: var(--ink);
+  transform: rotate(-0.5deg);
+  border: 1px solid #eee6cc;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.index-card:nth-child(2) { transform: rotate(0.8deg); }
+.index-card:nth-child(3) { transform: rotate(-1deg); }
+.index-card:hover { transform: rotate(0deg) scale(1.02); box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5); }
+.index-card .emoji { font-size: 42px; }
+.index-card h3 { font-family: 'Caveat', cursive; font-size: 28px; margin: 8px 0 4px 0; }
+.index-card p { font-size: 16px; color: #666; margin: 0; }
+.index-head {
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  font-size: 52px;
+  margin: 30px 0 6px 0;
+}
+.index-sub {
+  text-align: center;
+  font-family: 'Gochi Hand', cursive;
+  color: #777;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* ---------- Back to index link ---------- */
+.back-link {
+  display: inline-block;
+  margin-top: 24px;
+  font-family: 'Gochi Hand', cursive;
+  font-size: 15px;
+  color: var(--blue);
+  text-decoration: none;
+  border-bottom: 2px dashed var(--blue);
+}
+.back-link:hover { color: var(--red); border-color: var(--red); }
+
+/* ---------- Print ---------- */
+@media print {
+  body { background: #fff; padding: 0; }
+  .sheet {
+    box-shadow: none;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 0;
+  }
+  .index-card:hover { transform: none; }
+}
