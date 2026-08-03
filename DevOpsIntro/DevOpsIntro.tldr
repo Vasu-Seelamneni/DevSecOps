@@ -3335,9 +3335,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 13156.064183415632,
-			"y": 16066.14634771665,
-			"z": 0.05,
+			"x": 2190.31239797269,
+			"y": 1449.7815922840643,
+			"z": 0.12723610543171507,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -3988,7 +3988,7 @@
 		{
 			"meta": {},
 			"id": "page:FmThuUTucc1h5nqhUq286",
-			"name": "Page 2",
+			"name": "vedinc",
 			"index": "a2M8n",
 			"typeName": "page"
 		},
@@ -15092,7 +15092,7 @@
 		{
 			"meta": {},
 			"id": "page:page",
-			"name": "Page 1",
+			"name": "MyNotes",
 			"index": "a1",
 			"typeName": "page"
 		},
@@ -15390,8 +15390,8 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 1574,
-				"h": 903
+				"w": 1062,
+				"h": 638
 			},
 			"insets": [
 				false,
@@ -15406,9 +15406,9 @@
 			"isChatting": false,
 			"highlightedUserIds": [],
 			"isFocused": true,
-			"devicePixelRatio": 1,
+			"devicePixelRatio": 1.5,
 			"isCoarsePointer": false,
-			"isHoveringCanvas": null,
+			"isHoveringCanvas": false,
 			"openMenus": [],
 			"isChangingStyle": false,
 			"isReadonly": false,
@@ -16296,9 +16296,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 600,
-			"y": 3494,
-			"z": 1,
+			"x": -1831.1115962791403,
+			"y": -18969.14205166445,
+			"z": 0.3139304911410943,
 			"meta": {},
 			"id": "camera:page:FmThuUTucc1h5nqhUq286",
 			"typeName": "camera"
