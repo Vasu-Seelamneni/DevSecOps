@@ -1,0 +1,50 @@
+Steps to configure SSH for git
+
+1. Generate Nw SSH Key
+ssh-keygen -t ed25519 -C "vasu.seelamneni@gmail.com"
+If your system doesn’t support ED25519:
+ssh-keygen -t rsa -b 4096 -C "vasu.seelamneni@gmail.com"
+
+When prompted:
+File location: press Enter
+(default: ~/.ssh/id_ed25519)
+
+Passphrase: optional (press Enter for none)
+
+This creates two files:
+
+File	Purpose
+id_ed25519	Private key (keep safe, never share)
+id_ed25519.pub	Public key (upload to GitHub)
+
+2. Start the SSH Agent
+Windows (PowerShell):
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_ed25519
+
+Linux/macOS:
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+
+3. Add SSH Key to GitHub
+    Log in to GitHub
+    Go to Settings
+    Select SSH and GPG keys
+    Click New SSH key
+    Copy your public key:
+cat ~/.ssh/id_ed25519.pub
+    Paste it into GitHub → Save.
+
+4. Test SSH Connection
+ssh -T git@github.com
+Hi vasu! You've successfully authenticated, but GitHub does not provide shell access.
+
+5. Configure Git to Use SSH
+    Check current remote:
+    git remote -v
+
+    If you see:
+    https://github.com/username/repo.git
+    Change it to SSH:
+
+    git remote set-url origin git@github.com:username/repo.git
