@@ -28255,7 +28255,7 @@
 			"props": {
 				"color": "green",
 				"size": "l",
-				"w": 2859.65625,
+				"w": 4342.8003180703345,
 				"font": "draw",
 				"textAlign": "start",
 				"autoSize": true,
@@ -28377,12 +28377,6 @@
 									}
 								}
 							]
-						},
-						{
-							"type": "paragraph",
-							"attrs": {
-								"dir": "auto"
-							}
 						}
 					]
 				}
@@ -42418,13 +42412,12 @@
 			"followingUserId": null,
 			"opacityForNextShape": 1,
 			"stylesForNextShape": {
-				"tldraw:size": "l",
 				"tldraw:color": "green"
 			},
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
-				"type": "nwse-resize",
+				"type": "default",
 				"rotation": 0
 			},
 			"isFocusMode": false,
@@ -42434,8 +42427,8 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 1062,
-				"h": 638
+				"w": 1872,
+				"h": 1038
 			},
 			"insets": [
 				false,
@@ -42450,7 +42443,7 @@
 			"isChatting": false,
 			"highlightedUserIds": [],
 			"isFocused": true,
-			"devicePixelRatio": 1.5,
+			"devicePixelRatio": 1,
 			"isCoarsePointer": false,
 			"isHoveringCanvas": true,
 			"openMenus": [],
@@ -46615,9 +46608,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1952.3110599520135,
-			"y": -12166.08639153664,
-			"z": 0.16344996032980505,
+			"x": 2025.0722803270282,
+			"y": -12800.066491955607,
+			"z": 0.21848867947925021,
 			"meta": {},
 			"id": "camera:page:41rvNjwed2ma1TwuSuNTH",
 			"typeName": "camera"
@@ -48835,6 +48828,59 @@
 			},
 			"parentId": "page:41rvNjwed2ma1TwuSuNTH",
 			"index": "azH5z",
+			"typeName": "shape"
+		},
+		{
+			"x": -999.8475385514564,
+			"y": 4799.651989171241,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:TPbOrMVTrnHrMBimY_Z26",
+			"type": "text",
+			"props": {
+				"color": "red",
+				"size": "m",
+				"w": 1149.046875,
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 2.7645624794096753,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "Limitation in outbound traffic while you try to use public IP and NAT Gateway together."
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						}
+					]
+				}
+			},
+			"parentId": "page:41rvNjwed2ma1TwuSuNTH",
+			"index": "b5rwMz",
 			"typeName": "shape"
 		},
 		{

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow Trade Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        header {
+            background-color: #2b7cff;
+            padding: 15px 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h2 {
+            margin: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+        }
+        .portfolio-summary {
+            display: flex;
+            justify-content: space-between;
+        }
+        .portfolio-box {
+            width: 30%;
+            background-color: #eef3ff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .market-watch {
+            display: flex;
+            justify-content: space-between;
+        }
+        .market-item {
+            width: 30%;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #2b7cff;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        table th, table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        footer {
+            background-color: #2b7cff;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h2>Grow Trade Dashboard</h2>
+    <p>User: Demo Investor</p>
+</header>
+
+<div class="container">
+
+    <!-- Portfolio Summary -->
+    <div class="card">
+        <div class="section-title">Portfolio Summary</div>
+        <div class="portfolio-summary">
+            <div class="portfolio-box">
+                <h3>Total Value</h3>
+                <p>€12,450.00</p>
+            </div>
+            <div class="portfolio-box">
+                <h3>Today's Gain</h3>
+                <p>+€185.20</p>
+            </div>
+            <div class="portfolio-box">
+                <h3>Overall Return</h3>
+                <p>+8.4%</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Market Watch -->
+    <div class="card">
+        <div class="section-title">Market Watch</div>
+        <div class="market-watch">
+            <div class="market-item">
+                <h4>NASDAQ</h4>
+                <p>14,850.22</p>
+                <p style="color:green;">+0.92%</p>
+            </div>
+            <div class="market-item">
+                <h4>S&P 500</h4>
+                <p>4,525.18</p>
+                <p style="color:red;">-0.15%</p>
+            </div>
+            <div class="market-item">
+                <h4>FTSE 100</h4>
+                <p>7,420.55</p>
+                <p style="color:green;">+0.34%</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Holdings Table -->
+    <div class="card">
+        <div class="section-title">Your Holdings</div>
+        <table>
+            <tr>
+                <th>Asset</th>
+                <th>Quantity</th>
+                <th>Avg Buy Price</th>
+                <th>Current Price</th>
+                <th>P/L</th>
+            </tr>
+            <tr>
+                <td>Apple (AAPL)</td>
+                <td>10</td>
+                <td>€145.00</td>
+                <td>€158.20</td>
+                <td style="color:green;">+€132.00</td>
+            </tr>
+            <tr>
+                <td>Tesla (TSLA)</td>
+                <td>5</td>
+                <td>€210.00</td>
+                <td>€198.50</td>
+                <td style="color:red;">-€57.50</td>
+            </tr>
+            <tr>
+                <td>Amazon (AMZN)</td>
+                <td>3</td>
+                <td>€110.00</td>
+                <td>€125.40</td>
+                <td style="color:green;">+€46.20</td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Grow Trade – Demo Dashboard</p>
+</footer>
+
+</body>
+</html>
